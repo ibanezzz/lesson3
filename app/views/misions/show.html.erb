@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> title:</strong>
+  <%= @mision. title %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @mision.priority %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @mision.status %>
+</p>
+
+<%= link_to 'Edit', edit_mision_path(@mision) %> |
+<%= link_to 'Back', misions_path %>

@@ -1,0 +1,40 @@
+
+<p id="notice"><%= notice %></p>
+<h1>Misions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @misions.each do |mision| %>
+    <% if mision.status == 2 %>
+      <tr>
+        <td><%= mision. title %></td>
+        <td><%= mision.priority %></td>
+
+        <td><%= case mision.status 
+        when 0 then "Open"
+        when 1 then "Closed"
+        when 2 then "Resolved"
+            end%> </td>
+        <td><%= link_to 'Show', mision %></td>
+        <td><%= link_to 'Edit', edit_mision_path(mision) %></td>
+        <td><%= link_to 'Destroy', mision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mision', new_mision_path, class: 'btn btn-primary' %>
+<%= link_to 'Back', misions_path, class: 'btn btn-primary' %>
+
